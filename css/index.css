@@ -1,0 +1,58 @@
+
+#index_left,#index_right,#index_center{
+	float: left;
+	height: 100%;
+
+}
+#index_left,#index_right{
+	width: 20%;
+}
+#index_center{
+	width: 60%;
+	/*padding-top:5%; */
+}
+
+#index_left{
+	padding-top: 2%;
+}
+.nav_item{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 2.5rem;
+	color: white;
+	padding-top:0.5rem; 
+	padding-bottom:0.5rem;
+	margin-top: 1rem;
+}
+
+.border_5_blue{
+	border: 5px solid blue;
+	border-radius: 10px;
+}
+.border_5_blue:hover{
+	border-color: white;
+	background-image: url(/wp-content/themes/dazhu/resource/image/index-nav-focus1.png);
+}
+#index_right_1,#index_right_2{
+	background-image: url(/wp-content/themes/dazhu/resource/image/index-right1.png);
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 20px;
+	font-size: 1.2rem;
+}
+#index_right_1{
+	height: 40%;
+}
+#index_right_1>h3{
+	padding-top: 10%;
+}
+#index_right_2{
+	height: 55%;
+	margin-top: 5%;
+}
+#infomation{
+	width: 90%;
+	margin: 0.5rem auto;
+}

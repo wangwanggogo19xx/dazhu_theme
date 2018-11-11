@@ -1,0 +1,50 @@
+*{
+	margin: 0 0;
+	padding: 0 0;
+	box-sizing: border-box;
+	/*overflow: hidden;*/
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	/*background-color: gray;*/
+	background-color: rgb(4, 12, 62);
+	font-family: Microsoft YaHei, WenQuanYi Micro Hei, SimSun, sans-serif;
+    color: #f1f1f1;
+	
+}
+
+
+header{
+	/*background-image: url("../resource/image/banner-icon.png");*/
+	height: 20%;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clear_float{
+	clear:both;
+}
+#logo,#head_title{
+	position: relative;
+	top: 30%;
+	float: left;
+}
+#logo{
+	margin-left: 4%;
+}
+#head_title{
+	display: block;
+	margin-left: 20px;
+}
+#container{
+	/*padding-top:  5% ;*/
+	margin: 0 auto;
+	width:95%;
+	height: 65%;
+	/*background-color: red;*/
+}

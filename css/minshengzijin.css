@@ -1,0 +1,134 @@
+*{
+	margin: 0 0;
+	padding: 0 0;
+	box-sizing: border-box;
+	/*overflow: hidden;*/
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	/*background-color: gray;*/
+	/*background-color: rgb(4, 12, 62);*/
+	font-family: Microsoft YaHei, WenQuanYi Micro Hei, SimSun, sans-serif;
+    color: #f1f1f1;
+	
+}
+
+
+header{
+	/*background-image: url("../resource/image/banner-icon.png");*/
+	height: 20%;
+	padding-top: 1rem;
+}
+ul,li{
+	list-style: none;
+}
+
+body{
+	/*background-image: url(/wp-content/themes/dazhu/resource/image/minshengzijin/bg.png);*/
+	background-image: url("../resource/image/minshengzijin/bg.jpg");
+	
+}
+h1,h2,h3,h5{
+	text-align: center;
+}
+h1{
+
+	font-size: 3rem;
+}
+h3{
+	font-size: 2rem;
+}
+h5{
+	font-size: 1.5rem;
+}
+#container{
+	height: 80%;
+	width: 80%;
+	margin: 0 auto;
+	/*background-image: url("../resource/image/minshengzijin/bg.jpg");*/
+	background-color: rgba(77, 145, 255, 0.8);
+	padding-top: 2rem;
+
+	
+}
+/*tbody{
+	overflow-y: scroll;
+	height: 
+}
+tbody::-webkit-scrollbar {display:none}*/
+
+#search_box{
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 3rem;
+}
+#search_box  > *{
+	vertical-align: middle;
+	font-size: 2rem;
+	border-radius: 5px;
+
+}
+#id_card{
+	width: 30rem;
+}
+#submit{
+	width: 8rem;
+	background-color: rgb(39,96,199);
+	color: white;
+	text-align: center;
+}
+#submit:active {
+    background-color: rgb(30,64,177);
+}
+
+#search_result{
+	margin:  0 auto;
+	margin-top: 1rem;
+	border: 1px solid white;
+	width: 95%;
+	color:white;
+	height: 30rem;
+	overflow-y: scroll;
+	
+
+}
+
+/*tbody{
+	overflow-y: scroll;
+	height: 5rem;
+}*/
+#search_result::-webkit-scrollbar {display:none}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+th,td{
+	border: 1px solid white;
+	height: 3rem;
+	/*vertical-align: middle;*/
+	overflow: hidden;
+}
+th{
+	font-size: 2.5rem;
+}
+td{
+	font-size: 1.5rem;
+}
+.name,.money{
+	width: 15%;
+}
+.department,.divergency_date{
+	width: 20%;
+}
+.project{
+	width: 30%;
+}
+
+#msg{
+	position: absolute;
+	vertical-align: middle;
+
+}
