@@ -1,5 +1,5 @@
 <?php 
-
+   
 	$id_card = $_POST['idCard'];
 	// $id_card = '513029194608191735';
     $livehood_welfare_ajax_query_url ='http://www.dzxyghmhdpt.gov.cn/fundsdetail!getFundsInfo.do?start=0&limit=5&permissionCode=978D90244C82F512E888DBE28270AC95&idCard=';

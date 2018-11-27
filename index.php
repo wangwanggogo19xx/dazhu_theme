@@ -13,7 +13,7 @@
                 'orderby'=> 'name'
             ));
 		// var_dump(get_the_category());
-		// var_dump($top_categories);
+		// var_dump(get_category_custome_link());
 		// var_dump();
 		 foreach ($top_categories as $top_category) {
 		 	if($top_category->name != "未分类"){
@@ -27,7 +27,7 @@
 
     </ul>
     <div id="index_center">
-        <img width="100%" height="100%" src="<?php echo get_template_directory_uri()."/resource/image/index-center-2.jpg"; ?>">
+        <img width="100%" height="100%" src="<?php echo get_template_directory_uri()."/resources/image/index-center-2.jpg"; ?>">
     </div>
     <div id="index_right">
         <div id="index_right_1">
