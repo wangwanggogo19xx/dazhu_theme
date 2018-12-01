@@ -106,7 +106,7 @@ add_post_type_support( 'my_custom_post_type', 'post-formats' );
 function get_all_img_uri($content){
     $output = preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim',$content,$matches);
     if($output){
-        echo $output."=====";
+        // echo $output."=====";
 
         return $matches[1];
     }
@@ -180,9 +180,11 @@ function get_title_img($content,$default_img=
     }
     // $img_url = $default_img;
     $imgs=get_all_img_uri($content);
-    if(count($imgs)){
+    // var_dump($imgs);
+    if($imgs && count($imgs)){
         $img_url = $imgs[0];
     }
+
     echo $img_url;
 
 }
