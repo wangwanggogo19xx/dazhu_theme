@@ -1,5 +1,6 @@
 $(function(){
 	$("#submit").on('click', search_subsidy);
+	console.log(query_url);
 })
 var show_infomation = function(msg,delay,call_back){
 
@@ -37,6 +38,8 @@ var add_search_result = function(data){
 var is_id_card = function(str){
 	return true;
 }
+
+var query_url;
 var search_subsidy = function(argument) {
 	$("tbody").html("");
 	var id_card = $("#id_card").val();
@@ -48,8 +51,9 @@ var search_subsidy = function(argument) {
         action:'livehood-query',
         idCard:id_card
     };
+
 	// $.post('functions.php',$('form').serialize()+'&'+$.param(params) , function (data) {
-	$.post('http://127.0.0.1:8080/wp-content/themes/dazhu/php/my_page.php',$.param(params) , function (data) {
+	$.post(query_url,$.param(params) , function (data) {
    
 		console.log(data);
 		if(data.length > 0){

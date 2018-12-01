@@ -4,7 +4,10 @@
  * @package dazhu
  */
 	get_header();
+
+
 ?>
+<link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/index.css"); ?>">
 <ul id="index_left">
 	<?php 
 		$top_categories = get_categories(
@@ -17,7 +20,7 @@
 		// var_dump();
 		 foreach ($top_categories as $top_category) {
 		 	if($top_category->name != "未分类"){
-		 		echo "<a href='".get_category_custome_link($top_category)."'><li class='nav_item border_5_blue'>";
+		 		echo "<a href='".get_category_custome_link($top_category)."'><li class='item border_5_blue'>";
 		 	echo $top_category->name;
 		 	echo "</li></a>";
 		 	}	
@@ -37,7 +40,7 @@
             <h1>通知公告</h1>
             <div id="infomation">
 				<?php  
-					echo get_post( 12)->post_content;
+					echo get_post(12)->post_content;
 				?>
             </div>
         </div>

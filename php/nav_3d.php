@@ -1,6 +1,9 @@
 <?php 
 	get_header();
  ?>
+
+ <script type="text/javascript" src="<?php echo get_my_source_uri("/js/nav_3d.js"); ?>"></script>
+ <link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/3D.css"); ?>">
 <ul>
  	
 <?php 
@@ -16,7 +19,7 @@
 	foreach ($categories as $index=>$category) {
 	 	if($category->name != "未分类"){
 	 		echo "<a class='item_".$item_class_no[$index]."' href='".get_category_custome_link($category)."'>
-	 		<li>".
+	 		<li class='item'>".
 	 		"<img width='100%' height='100%' src='".get_my_resource_uri($category->category_nicename.'.png')."'>";
 		 	echo "</li></a>";
 	 	}	

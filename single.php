@@ -1,15 +1,29 @@
-<!-- <?php echo "aaaaaa"; ?> -->
 <?php 
-	echo get_post_format();
-	echo has_post_format( 'aside');
-	echo has_post_format( 'video');
-	$post=get_post(get_the_ID());
-	var_dump($post);
 
- ?>
-<?php while (have_posts()) : the_post(); ?>
-<!-- <?php the_title(); ?>
-<?php the_content(); ?> -->
-<!-- <?php the_tags('','','') =="video"; ?> -->
-<!-- <?php echo get_tag(); ?> -->
-<?php endwhile; ?>
+
+$post=get_post(get_the_ID());
+var_dump($post);
+
+
+// if (get_all_img_uri($post->post_content)) {
+// 	include(get_my_source_directory("/single-image.php"));
+
+
+// 	echo "image";
+// 	return;
+// 	# code...
+// }
+
+
+if(get_all_video_uri($post->post_content)) {
+	include(get_my_source_directory("/single-video.php"));
+	echo "video";
+	return;
+	# code...
+}
+// echo "normal";
+include(get_my_source_directory("/single-normal.php")); 
+
+
+?>
+

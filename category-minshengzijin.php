@@ -1,3 +1,19 @@
+
+<?php 
+	$id_card = $_POST['idCard'];
+	// $id_card = get_query_var('idCard');
+	// var_dump($_POST);
+	// echo $id_card;
+	if ($id_card) {
+		$resp = query_livehood_funds($id_card);
+   		echo  $resp;
+	}else{
+		// echo "sssss ";
+		// require_once(get_template_directory().'/php/minshengzijin.php');
+	// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,3 +48,12 @@
 	</table> 
 	</div>
 </div>
+<script type="text/javascript">
+	var query_url = "<?php 
+		 echo home_url(add_query_arg(array(),$wp->request));
+	 ?>";
+	
+</script>
+<?php 
+}
+ ?>

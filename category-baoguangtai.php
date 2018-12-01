@@ -2,13 +2,17 @@
 
 	get_header();
  ?>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri().'/css/baoguangtai.css'; ?>">
+<script type="text/javascript" src="<?php echo get_my_source_uri("/js/baoguangtai.js"); ?>"></script>
+
+<!-- <div class="item_container"> -->
 <?php 
+	$path = get_my_source_directory("/php/items.php");
+	include($path);
 
-// include(get_template_directory().'/php/nav_3d.php');
-
-	echo "曝光台";
  ?>
 
+<!-- </div> -->
  <?php 
 
  	get_footer();

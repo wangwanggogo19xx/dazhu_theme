@@ -1,7 +1,7 @@
 <?php 
 
-header("Content-Type: text/html; charset=utf-8");
-header("Access-Control-Allow-Origin：*");
+// header("Content-Type: text/html; charset=utf-8");
+// header("Access-Control-Allow-Origin：*");
 $action = $_POST['action'];
 if($action != null){
 	// $template_url = get_template_directory() ."/php/".$my_actions[$action].".php";

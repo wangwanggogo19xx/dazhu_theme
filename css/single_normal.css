@@ -1,7 +1,7 @@
 #container{
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start; ;
+	justify-content: space-around ;
 	align-items: center;
 }
 #top_row{
@@ -11,7 +11,7 @@
 	background-image:-moz-linear-gradient(left, rgb(13,26,255), rgb(1,31,63));
 	background-image:-ms-linear-gradient(left, rgb(13,26,255), rgb(1,31,63));
 	background-image:-o-linear-gradient(left, rgb(13,26,255), rgb(1,31,63));
-	
+	color: rgba(255, 171, 84, 0.8);
 }
 h3{
 	/*	width: 90%;*/
@@ -22,8 +22,16 @@ h3{
 	font-size: 2rem;
 }
 article{
+	width: 90%;
 	height: 80%;
+	font-size: 2rem;
+	overflow: hidden;
 	/*width: 90%;*/
-	/*column-width: 100%;*/
-	-webkit-columns:100px 3;
+	/*column-width: 1360px;*/
+	/*-webkit-columns:100px 3;*/
+}
+#bottom_row{
+	height: 5%;
+	font-size: 1rem;
+	text-align: center;
 }

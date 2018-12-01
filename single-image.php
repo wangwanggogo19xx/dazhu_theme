@@ -8,14 +8,16 @@ Description: 只有图片的文章，每页显示两张
 <?php 
 	get_header();
 ?>
-<script type="text/javascript" src="<?php echo get_template_directory_uri().'/js/jquery-1.8.1.min.js'; ?>"></script>
+
 	<script type="text/javascript" src="<?php echo get_template_directory_uri().'/js/single_image.js'; ?>"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri().'/css/single_img.css'; ?>">
 
 
 
 <?php 
-	$post=get_post(get_the_ID());
+	if(!$post){
+      $post=get_post(get_the_ID());
+    }
 	$imgs=get_all_img_uri($post->post_content);
 ?>
 <div id="top_row">
@@ -25,7 +27,7 @@ Description: 只有图片的文章，每页显示两张
 <ul>
 	<?php foreach ($imgs as  $value){
 	?>
-		<li class="item">
+		<li class="img_item">
 			<img  src="<?php echo $value; ?>" >
 		</li>
 	<?php } ?>

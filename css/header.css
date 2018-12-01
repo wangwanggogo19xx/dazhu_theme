@@ -45,7 +45,7 @@ a{
 	/*padding-top:  5% ;*/
 	margin: 0 auto;
 	width:85%;
-	height: 65%;
+	height: 75%;
 	/*background-color: red;*/
 }
 #msg_container{
@@ -65,4 +65,10 @@ a{
 	border-radius: 10px;
 	padding:1rem 2rem;
 
+}
+
+/*全局页面需要的属性*/
+.item.focus{
+	border-radius: 10px;
+	border-color: white;
 }

@@ -7,7 +7,7 @@ $(function() {
 	total_page:parseInt($("#total_page").text()),
 	next_page:function(){
 		var left = parseInt($("ul").css("left").split('px')[0]);
-		console.log(pages.total_page);
+		// console.log(pages.total_page);
 		if((pages.current_page + 1) <= pages.total_page){
 			$("ul").animate({'left':(left - $("ul").width())+"px"},1000);
 			pages.current_page += 1;
@@ -28,24 +28,24 @@ $(function() {
 	}
 	}
 
-	var key_binds=[];
-	key_binds['39'] = function(){
+	// var key_binds=[];
+	KEY_BIKNDS['39'] = function(){
 		if(!$("ul").is(":animated")){
-			console.log("ss");
+			// console.log("ss");
 			pages.next_page();
 		}
-		console.log($("ul").is(":animated"));
+		// console.log($("ul").is(":animated"));
 	}
-	key_binds['37'] = function(){
+	KEY_BIKNDS['37'] = function(){
 		if(!$("ul").is(":animated")){
 			pages.last_page();
 		}
 	}
-	$(document).keydown(function(event){
-		if(key_binds[event.keyCode]){
-			key_binds[event.keyCode]();
-	}
+	// $(document).keydown(function(event){
+	// 	if(key_binds[event.keyCode]){
+	// 		key_binds[event.keyCode]();
+	// }
 
-	})
+	// })
 })
 
