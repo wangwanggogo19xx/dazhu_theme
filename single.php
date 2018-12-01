@@ -2,7 +2,7 @@
 
 
 $post=get_post(get_the_ID());
-var_dump($post);
+// var_dump($post);
 
 
 // if (get_all_img_uri($post->post_content)) {
