@@ -18,7 +18,16 @@ $(function(){
 			});
 
 		var scroll_width = article[0].scrollWidth;
-		total_page_count = (scroll_width - width) / (width + gap_width) + 1;
+		total_page_count = Math.floor((scroll_width - width ) / (width + gap_width) + 1);
+		
+		// 698.html 有问题
+		// 文章中有图片是会出现问题
+		
+
+		console.log(scroll_width+"==");
+		console.log(width+"==");
+		console.log(scroll_width - width);
+		console.log((scroll_width - width) / (width + gap_width));
 		console.log(total_page_count);
 		$("#total_page").text(total_page_count);
 

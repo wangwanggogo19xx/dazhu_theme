@@ -2,9 +2,7 @@
 	margin: 0 0;
 	padding: 0 0;
 	box-sizing: border-box;
-	/*overflow: hidden;*/
 }
-
 html,body{
 	height: 100%;
 	width: 100%;
@@ -12,13 +10,9 @@ html,body{
 	background-color: rgb(4, 12, 62);
 	font-family: Microsoft YaHei, WenQuanYi Micro Hei, SimSun, sans-serif;
     color: #f1f1f1;
-	
 }
-
-
 header{
-	/*background-image: url("../resource/image/banner-icon.png");*/
-	height: 20%;
+	height: 15%;
 }
 ul,li{
 	list-style: none;
@@ -42,21 +36,16 @@ a{
 	margin-left: 20px;
 }
 #container{
-	/*padding-top:  5% ;*/
 	margin: 0 auto;
 	width:85%;
-	height: 75%;
-	/*background-color: red;*/
+	height: 80%;
 }
 #msg_container{
 	position: absolute;
-	/*display: flex;*/
 	width: 100%;
 	height: 100%;
 	top: 0;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	
 	display: none;
 }
 #msg{

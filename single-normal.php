@@ -19,11 +19,15 @@ Description: 只有文字的普通文章
     }
  ?>
 <?php while (have_posts()) : the_post(); ?>
+
 <div id="top_row">
        <h3><?php the_title(); ?></h1> 
     </div>
        <article>
-			<?php the_content(); ?>
+			<?php 
+        // echo get_the_content();
+        the_content(); 
+      ?>
        </article>
        <div id="bottom_row">
    <div>

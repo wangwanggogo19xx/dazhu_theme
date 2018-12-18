@@ -30,6 +30,11 @@ article{
 	/*column-width: 1360px;*/
 	/*-webkit-columns:100px 3;*/
 }
+
+article img{
+	max-width: 90%;
+	max-height: 90%;
+}
 #bottom_row{
 	height: 5%;
 	font-size: 1rem;

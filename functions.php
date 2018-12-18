@@ -114,14 +114,25 @@ function get_all_img_uri($content){
 }
 // 获取$content中的所有视屏链接地址
 function get_all_video_uri($content){
-    $output = preg_match_all('/<a[^<]+href="(.+?)"/is',$content,$matches);
+    $regex = '/>(http:\/\/.+?\.ts)</is';
+    $output = preg_match_all($regex,$content,$matches);
     // $output = preg_match_all('/href="(.+?)"/is',$content,$matches);
     if($output){
         return $matches[1];
     }
     return false;
 }
-
+function have_word($content){
+    // $regex = '/>(.+?)</is';
+    // $output = preg_match_all($regex,$content,$matches);
+    // $output = preg_match_all('/href="(.+?)"/is',$content,$matches);
+    $output = strlen(trim(preg_replace('/<.+?>/is',"",$content)));
+   
+    if($output){
+        return true;
+    }
+    return false;
+}
 
 //获取民生资金查询结果
 function query_livehood_funds($id_card){
@@ -188,5 +199,97 @@ function get_title_img($content,$default_img=
     echo $img_url;
 
 }
+
+
+//获取首页分类目录
+function get_index_catogory(){
+     $query_arr = array(
+                'parent' => 0,
+                'orderby'=> 'name'
+            );
+     $exclude = array('未分类');
+     $conf = array(
+            'item_img' => false,
+            'item_name' => true,
+            'show_page' =>false,
+            'current_page_count' => 0,
+            'is_category' =>true
+        );
+     get_items($query_arr,$exclude,$conf);
+
+}
+
+
+
+
+//获取items(目录)
+// $query_arr = array(
+//                 'parent' => 0,
+//                 'orderby'=> 'name'
+//             );
+//      $exclude = array('未分类');
+//      $conf = array(
+//             'item_img' => false,
+//             'item_name' => true,
+//             'show_page' =>false,
+//             'current_page_count' => 0,
+//             'is_index' =>true
+//         );
+// $conf = array(
+ //        'item_img' => false,
+ //        'item_name' => true,
+ //        'show_page' =>false,
+ //        'current_page_count' => 0,
+ //        'is_category' =>true
+ //    );
+
+function get_items($query_arr,$exclude=array(),$conf=array()){
+    if(!$query_arr){
+        return null;
+    }
+     
+    $catergories = get_categories($query_arr);
+    if($catergories){
+        echo "<div id='items_container'><ul id='items'>";
+        foreach ($catergories as $category) {
+            if (!in_array($category->name,$exclude)) {
+                echo "<li class='item_wrapper'><a href='";
+                if($conf['is_category']){
+                    echo get_category_custome_link($category);
+                }else{
+                    echo the_permalink();
+                }
+                echo "'><div class='item'>";
+                // echo $ite
+                if ($conf['item_img'] ) {
+                    echo "<img class='item_img' src='".get_my_resource_uri($category->category_nicename.'.png')."'>";
+                }
+                // echo (string)$item_img ;
+                if ($conf['item_name']) {
+                    echo "<div class='item_name' ><p>";
+                    echo $category->name;
+                    echo "</p></div><div class='clear_float'></div></div>";
+                }
+                echo "</a></li>";
+            }   
+         }
+        echo "<li class='clear_float'></li></ul></div>";
+
+        if($conf['$show_page']){
+            echo "<div id='page'><p><span class='current_page'>";
+            echo $conf['current_page_count'];
+            echo "</span><span class='total_pages'>";
+            echo ceil(get_category(get_query_var('cat'))->count / PER_PAGE_COUNT);
+            echo "</span></p></div>";
+        }
+
+    }else{
+        echo "没有数据";
+    }
+    
+
+
+}
+
 
  ?>

@@ -5,24 +5,42 @@
 #container>ul{
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: row; 
-	justify-content: space-between;
-	align-items: center;
+	position: relative;
+
 }
-#container>ul li{
+#container>ul>a{
 	height: 100%;
+	display: block;
+	float: left;
+	position: relative;
 }
+
 .item_1{
 	height: 90%;
 	width: 30%;
 }
-
+.item_1>li{
+	height: 90%;
+}
 .item_2{
 	height: 80%;
 	width: 20%;
 }
+.item_2>li{
+	height: 80%;
+}
 .item_3{
 	height: 60%;
 	width: 15%;
+}
+.item_3>li{
+	height: 60%;
+}
+#container>ul li{
+	position:absolute;
+	margin:auto;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
 }

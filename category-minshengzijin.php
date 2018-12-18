@@ -19,6 +19,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php wp_title('|', true, 'right'); ?></title>
+
+	<link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/minshengzijin.css"); ?>">
+	<script type="text/javascript" src="<?php echo get_my_source_uri('/js/jquery-1.8.1.min.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo get_my_source_uri('/js/minshengzijin.js'); ?>"></script>
 </head>
 <body>
 <header>

@@ -12,10 +12,18 @@
 			height: 100%;
 		}
 		body{
-			display: flex;
+			/*display: flex;
 			flex-direction: column;
 			justify-content: center;
-			align-items:center;
+			align-items:center;*/
+			/*display: table;*/
+			/*display: inline-block;*/
+			text-align: center;
+			vertical-align: middle;
+
+		}
+		img{
+			margin-top: 5rem;
 		}
 	</style>
 </head>
