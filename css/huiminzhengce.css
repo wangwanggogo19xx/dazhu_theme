@@ -57,6 +57,7 @@ a{
 	margin: 0 auto;
 	border: 5px solid rgb(4, 12, 62);
 	border-radius: 10px;
+	background: url(../resources/catergories/huiminzhengce/item_bg.png);
 	/*display: table;*/
 }
 .item:hover{
@@ -64,7 +65,7 @@ a{
 	border: 5px solid white;
 }
 .item_img{
-	width: 30%;
+	width: 40%;
 	height: 100%;
 	/*width: auto;*/
 	float: left;
