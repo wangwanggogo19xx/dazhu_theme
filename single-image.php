@@ -11,6 +11,8 @@ Description: 只有图片的文章，每页显示两张
 
 	<script type="text/javascript" src="<?php echo get_template_directory_uri().'/js/single_image.js'; ?>"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri().'/css/single_img.css'; ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/single.css"); ?>">
+
 
 
 

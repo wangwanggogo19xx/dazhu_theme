@@ -9,6 +9,8 @@ Description: 只有文字的普通文章
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/single_normal.css"); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo get_my_source_uri("/css/single.css"); ?>">
+
 <script type="text/javascript" src="<?php echo get_my_source_uri("/js/single_normal.js");  ?>"></script>
 
 

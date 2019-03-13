@@ -207,16 +207,17 @@ function get_index_catogory(){
                 'parent' => 0,
                 'orderby'=> 'name'
             );
-     $exclude = array('未分类');
-     $conf = array(
-            'item_img' => false,
-            'item_name' => true,
-            'show_page' =>false,
-            'current_page_count' => 0,
-            'is_category' =>true
-        );
-     get_items($query_arr,$exclude,$conf);
-
+    $catergories = get_categories($query_arr);
+    $items =  array( );
+    foreach ($catergories as $category) {
+        if  ($category->name !='未分类'){
+            $item  = array();
+            $item['href'] = get_category_custome_link($category);
+            $item['name'] = $category->name;
+            array_push($items,$item);
+        }
+    }
+    display_items($items);
 }
 
 
@@ -290,6 +291,61 @@ function get_items($query_arr,$exclude=array(),$conf=array()){
 
 
 }
+function display_items($items,$pages=null)
+{
+    if(!count($items)){
+        echo "<div style='font-size:2rem;text-align:center;'>没有数据</div>";
+        return;
+    }
 
+    echo "<div id='items_container'><ul id='items'>";
+    foreach ($items as $item) {
+        echo "<li class='item_wrapper'>
+                    <a href='".$item['href']."'>
+                        <div class='item'>";
+        if($item['img']){
+            echo "<img class='item_img' src='".$item['img']."'>";
+        }
+        if($item['name']){
+            echo  "<div class='item_name' >
+                      <p>".$item['name']."</p>
+                    </div>";
+        }
+        echo  " <div class='clear_float'>
+                    </div>
+                    </div>
+                </a>
+            </li>";
+     }
+    echo "<li class='clear_float'></li></ul>";
+
+    if($pages){
+        echo "<div id='page'><p><span class='current_page'>";
+        echo $pages['current_page'];
+        echo "</span>/<span class='total_pages'>";
+        echo $pages['total_page'];
+        echo "</span></p></div>";
+    }
+    echo "</div>";
+
+}
+
+function display_my_catergories(){
+    $pages['current_page'] = $_GET['page'];
+    if (!$pages['current_page']) {
+        $pages['current_page'] = 1;
+    }
+    $posts = get_my_page(get_query_var('cat'),$pages['current_page']);
+    $items =  array();
+    foreach( $posts as $index=>$post ){
+
+        $item  = array();
+        $item['href'] = $post->guid;
+        $item['name'] = $post->post_title;
+        array_push($items,$item);
+    }
+    $pages['total_page'] = ceil(get_category(get_query_var('cat'))->count / PER_PAGE_COUNT);
+    display_items($items,$pages);
+}
 
  ?>

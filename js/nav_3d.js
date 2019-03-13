@@ -2,10 +2,6 @@ $(function(){
 	$('.focus').removeClass("focus");
 	$('.item_1>li').addClass("focus");
 
-
-
-
-
 	var items = [];
 	var init_items = function(){
 		var imgs = $("#container img");

@@ -3,7 +3,7 @@ $(function() {
 	var total_pages = parseInt($(".total_pages").text()) || 0;
 	var current_page = parseInt($(".current_page").text()) || 0;
 	
-	var next_page = function(){
+	next_page = function(){
 		if (current_page + 1 <= total_pages) {
 			// window.location.href = next_page_url;
 			window.location.href = window.location.href.split("?")[0]+"?page="+(current_page + 1);
@@ -11,7 +11,7 @@ $(function() {
 		console.log("next_page");
 	}
 
-	var prev_page = function(){
+	prev_page = function(){
 		if (current_page - 1 >= 1 ) {
 			window.location.href = window.location.href.split("?")[0]+"?page="+(current_page - 1);
 		}
@@ -38,9 +38,9 @@ $(function() {
 
 	}
 	// up
-	KEY_BIKNDS['38'] = my_pre_item;
+	// KEY_BIKNDS['38'] = my_pre_item;
 	// down
-	KEY_BIKNDS['40'] = my_next_item;
+	// KEY_BIKNDS['40'] = my_next_item;
 	// // left
 	KEY_BIKNDS['37'] = undefined;
 	// right

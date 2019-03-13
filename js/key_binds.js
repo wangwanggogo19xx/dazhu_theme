@@ -12,12 +12,17 @@ $(function(){
 	})
 
 
+
+
+	//指定后退界面
+	history.pushState(null,null,document.URL);
+	window.addEventListener('popstate',function(){
+		history.pushState(null,null,RETURN_URL);
+		window.location.href = RETURN_URL;
+	});
+
 	var total_pages = parseInt($(".total_pages").text()) || 0;
 	var current_page = parseInt($(".current_page").text()) || 0;
-	// var total_items_count = parseInt($("#items_container>ul>a").length) || 0;
-	var total_items_count = parseInt($("ul>a").length) || 0;
-
-
 
 	// 默认上一页
 	prev_page =function(){
@@ -42,26 +47,24 @@ $(function(){
 	// 定位到下一个元素
 	next_item = function(){
 		var this_item = $(".item.focus");
-		current_page = parseInt($(".current_page").text());
-		var this_item_index = this_item.parent("a").index();
-		if(this_item_index + 1 <= total_items_count - 1){
-			this_item.parent("a").next().children(".item").addClass('focus');
-			this_item.removeClass("focus");
+		var next_item = this_item.parents(".item_wrapper").next().find(".item");
+		if(next_item.length){ //找到了下一个item
+			next_item.addClass("focus");
+			this_item.removeClass('focus');
 		}else{
-			// 不同页面需要实现各自的下一页
+			// console.log("next_page");
 			next_page();
 		}
+		
 	} 
 
 	// 定位到上一个元素
 	prev_item = function(){
 		var this_item = $(".item.focus");
-		current_page = parseInt($(".current_page").text());
-		var this_item_index = this_item.parent("a").index();
-
-		if(this_item_index - 1 >= 0){
-			this_item.parent("a").prev().children(".item").addClass('focus');
+		var prev_item = this_item.parents(".item_wrapper").prev().find(".item");
+		if(prev_item.length){
 			this_item.removeClass("focus");
+			prev_item.addClass("focus");
 		}else{
 			// 不同页面需要实现各自的下一页
 			prev_page();
@@ -97,5 +100,8 @@ var next_page;
 var next_item;
 var prev_item;
 var item_be_choosed;
+
+var RETURN_URL = "http://192.168.33.20/dazhu/";
+// var RETURN_URL;
 
 
