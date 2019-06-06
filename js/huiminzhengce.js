@@ -2,7 +2,6 @@ $(function(){
 
 
 
-	// var total_count = $("ul>a").length ;
 	var per_row = 5;
 	var next_row_item = function(){
 		var this_item = $(".item.focus");

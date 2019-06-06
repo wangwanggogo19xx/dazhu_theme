@@ -33,7 +33,7 @@
     </div>
     <div id="index_right">
         <div id="index_right_1">
-            <h2>石河镇 新华村</h2>
+            <h1>石河镇 新华村</h1>
         </div>
         <div id="index_right_2">
             <h1>通知公告</h1>
